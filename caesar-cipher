@@ -1,0 +1,24 @@
+
+direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+text = input("Type your message:\n").lower()
+shift = int(input("Type the shift number:\n"))
+
+def ceaser(text,shift,direction):
+  cipher_text=""
+  if direction=="encode":
+    for letter in text:
+      position= alphabet.index(letter)
+      new_position=position+shift
+      new_letter=alphabet[new_position]
+      cipher_text += new_letter
+    print(f"The encoded text is {cipher_text}")
+  plain_text=""
+  if direction=="decode":  
+     for letter in text:
+        position= alphabet.index(letter)
+        new_position=position-shift
+        new_letter=alphabet[new_position]
+        plain_text += new_letter
+     print(f"The decoded text is {plain_text}")
+  
+ceaser(text,shift,direction)
